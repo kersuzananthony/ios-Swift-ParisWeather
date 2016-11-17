@@ -53,10 +53,10 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ZFP-4g-1fA">
-                                        <rect key="frame" x="0.0" y="497" width="375" height="100"/>
+                                        <rect key="frame" x="0.0" y="473" width="375" height="124"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="100" id="bCt-9Q-AGB"/>
+                                            <constraint firstAttribute="height" constant="124" id="bCt-9Q-AGB"/>
                                         </constraints>
                                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="lIN-30-HAM">
                                             <size key="itemSize" width="50" height="50"/>

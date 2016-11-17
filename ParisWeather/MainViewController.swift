@@ -10,6 +10,15 @@ import UIKit
 
 class MainViewController: UIViewController {
 
+    // MARK: - Statics member
+    private static let dateFormatter: DateFormatter = {
+        let dateFormatter = DateFormatter()
+        dateFormatter.timeStyle = .none
+        dateFormatter.dateStyle = .long
+        
+        return dateFormatter
+    }()
+    
     // MARK: - Storyboard
     fileprivate struct CellIdentifier {
         static let weatherCell = "WeatherCell"
@@ -47,7 +56,12 @@ extension MainViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return UICollectionViewCell()
+        
+        let cell = self.collectionView.dequeueReusableCell(withReuseIdentifier: CellIdentifier.weatherCell, for: indexPath) as! WeatherCell
+        
+        cell.configureCell(with: Weather())
+        
+        return cell
     }
 }
 
