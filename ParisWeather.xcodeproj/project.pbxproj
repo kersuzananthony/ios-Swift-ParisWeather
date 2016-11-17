@@ -20,6 +20,7 @@
 		DCA61FDA1DDE0B6E00D06C3A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DCA61FD91DDE0B6E00D06C3A /* Assets.xcassets */; };
 		DCA61FDD1DDE0B6E00D06C3A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCA61FDB1DDE0B6E00D06C3A /* LaunchScreen.storyboard */; };
 		DCCE896A1DDE19E4005686FA /* JSONWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCE89691DDE19E4005686FA /* JSONWeather.swift */; };
+		DCCE896D1DDE253B005686FA /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCE896C1DDE253B005686FA /* APIClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		DCA61FDC1DDE0B6E00D06C3A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DCA61FDE1DDE0B6E00D06C3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DCCE89691DDE19E4005686FA /* JSONWeather.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONWeather.swift; sourceTree = "<group>"; };
+		DCCE896C1DDE253B005686FA /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		E17D1D47DF46EFF3C7D2BFFE /* Pods-ParisWeather.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ParisWeather.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ParisWeather/Pods-ParisWeather.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -128,6 +130,7 @@
 		DCA61FD11DDE0B6E00D06C3A /* ParisWeather */ = {
 			isa = PBXGroup;
 			children = (
+				DCCE896B1DDE252E005686FA /* Services */,
 				DCA4608E1DDE13E100775E78 /* SupportedFiles */,
 				DCA460891DDE0E7100775E78 /* Controllers */,
 				DCA460881DDE0E6C00775E78 /* Views */,
@@ -155,6 +158,14 @@
 				DCCE89691DDE19E4005686FA /* JSONWeather.swift */,
 			);
 			name = JSON;
+			sourceTree = "<group>";
+		};
+		DCCE896B1DDE252E005686FA /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				DCCE896C1DDE253B005686FA /* APIClient.swift */,
+			);
+			name = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -290,6 +301,7 @@
 				DCA460861DDE0E5E00775E78 /* Weather+CoreDataClass.swift in Sources */,
 				DCCE896A1DDE19E4005686FA /* JSONWeather.swift in Sources */,
 				DCA460771DDE0C2200775E78 /* ParisWeather.xcdatamodeld in Sources */,
+				DCCE896D1DDE253B005686FA /* APIClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
