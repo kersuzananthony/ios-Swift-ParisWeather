@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		77C2D9351B21F9765539B16D /* Pods_ParisWeather.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF6C8CC2DA753B624D197F4D /* Pods_ParisWeather.framework */; };
+		DCA460771DDE0C2200775E78 /* ParisWeather.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DCA460751DDE0C2200775E78 /* ParisWeather.xcdatamodeld */; };
+		DCA460861DDE0E5E00775E78 /* Weather+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA460841DDE0E5E00775E78 /* Weather+CoreDataClass.swift */; };
+		DCA460871DDE0E5E00775E78 /* Weather+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA460851DDE0E5E00775E78 /* Weather+CoreDataProperties.swift */; };
 		DCA61FD31DDE0B6E00D06C3A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA61FD21DDE0B6E00D06C3A /* AppDelegate.swift */; };
 		DCA61FD51DDE0B6E00D06C3A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA61FD41DDE0B6E00D06C3A /* ViewController.swift */; };
 		DCA61FD81DDE0B6E00D06C3A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCA61FD61DDE0B6E00D06C3A /* Main.storyboard */; };
@@ -15,6 +19,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5476CC880D05FEBC61DBA0B0 /* Pods-ParisWeather.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ParisWeather.release.xcconfig"; path = "Pods/Target Support Files/Pods-ParisWeather/Pods-ParisWeather.release.xcconfig"; sourceTree = "<group>"; };
+		AF6C8CC2DA753B624D197F4D /* Pods_ParisWeather.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ParisWeather.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DCA460761DDE0C2200775E78 /* ParisWeather.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ParisWeather.xcdatamodel; sourceTree = "<group>"; };
+		DCA460841DDE0E5E00775E78 /* Weather+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Weather+CoreDataClass.swift"; sourceTree = "<group>"; };
+		DCA460851DDE0E5E00775E78 /* Weather+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Weather+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		DCA61FCF1DDE0B6E00D06C3A /* ParisWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ParisWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCA61FD21DDE0B6E00D06C3A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DCA61FD41DDE0B6E00D06C3A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +31,7 @@
 		DCA61FD91DDE0B6E00D06C3A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DCA61FDC1DDE0B6E00D06C3A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DCA61FDE1DDE0B6E00D06C3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E17D1D47DF46EFF3C7D2BFFE /* Pods-ParisWeather.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ParisWeather.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ParisWeather/Pods-ParisWeather.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +39,61 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				77C2D9351B21F9765539B16D /* Pods_ParisWeather.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		638DEB6F1D8A5483FE87E997 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AF6C8CC2DA753B624D197F4D /* Pods_ParisWeather.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D1B44C251B2CC2395695D2B3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E17D1D47DF46EFF3C7D2BFFE /* Pods-ParisWeather.debug.xcconfig */,
+				5476CC880D05FEBC61DBA0B0 /* Pods-ParisWeather.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		DCA460741DDE0C1300775E78 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DCA460841DDE0E5E00775E78 /* Weather+CoreDataClass.swift */,
+				DCA460851DDE0E5E00775E78 /* Weather+CoreDataProperties.swift */,
+				DCA460751DDE0C2200775E78 /* ParisWeather.xcdatamodeld */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		DCA460881DDE0E6C00775E78 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		DCA460891DDE0E7100775E78 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
 		DCA61FC61DDE0B6E00D06C3A = {
 			isa = PBXGroup;
 			children = (
 				DCA61FD11DDE0B6E00D06C3A /* ParisWeather */,
 				DCA61FD01DDE0B6E00D06C3A /* Products */,
+				D1B44C251B2CC2395695D2B3 /* Pods */,
+				638DEB6F1D8A5483FE87E997 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,6 +108,9 @@
 		DCA61FD11DDE0B6E00D06C3A /* ParisWeather */ = {
 			isa = PBXGroup;
 			children = (
+				DCA460891DDE0E7100775E78 /* Controllers */,
+				DCA460881DDE0E6C00775E78 /* Views */,
+				DCA460741DDE0C1300775E78 /* Models */,
 				DCA61FD21DDE0B6E00D06C3A /* AppDelegate.swift */,
 				DCA61FD41DDE0B6E00D06C3A /* ViewController.swift */,
 				DCA61FD61DDE0B6E00D06C3A /* Main.storyboard */,
@@ -71,9 +128,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DCA61FE11DDE0B6E00D06C3A /* Build configuration list for PBXNativeTarget "ParisWeather" */;
 			buildPhases = (
+				C28C2827300AD2F927B5A37C /* [CP] Check Pods Manifest.lock */,
 				DCA61FCB1DDE0B6E00D06C3A /* Sources */,
 				DCA61FCC1DDE0B6E00D06C3A /* Frameworks */,
 				DCA61FCD1DDE0B6E00D06C3A /* Resources */,
+				B10C3C13A93DBCB21BF61EDE /* [CP] Embed Pods Frameworks */,
+				236194900A648149CB8CA1AA /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -132,6 +192,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		236194900A648149CB8CA1AA /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ParisWeather/Pods-ParisWeather-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B10C3C13A93DBCB21BF61EDE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ParisWeather/Pods-ParisWeather-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C28C2827300AD2F927B5A37C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		DCA61FCB1DDE0B6E00D06C3A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -139,6 +247,9 @@
 			files = (
 				DCA61FD51DDE0B6E00D06C3A /* ViewController.swift in Sources */,
 				DCA61FD31DDE0B6E00D06C3A /* AppDelegate.swift in Sources */,
+				DCA460871DDE0E5E00775E78 /* Weather+CoreDataProperties.swift in Sources */,
+				DCA460861DDE0E5E00775E78 /* Weather+CoreDataClass.swift in Sources */,
+				DCA460771DDE0C2200775E78 /* ParisWeather.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,6 +370,7 @@
 		};
 		DCA61FE21DDE0B6E00D06C3A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E17D1D47DF46EFF3C7D2BFFE /* Pods-ParisWeather.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = M4YY2LX9P9;
@@ -272,6 +384,7 @@
 		};
 		DCA61FE31DDE0B6E00D06C3A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5476CC880D05FEBC61DBA0B0 /* Pods-ParisWeather.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = M4YY2LX9P9;
@@ -302,8 +415,22 @@
 				DCA61FE31DDE0B6E00D06C3A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		DCA460751DDE0C2200775E78 /* ParisWeather.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				DCA460761DDE0C2200775E78 /* ParisWeather.xcdatamodel */,
+			);
+			currentVersion = DCA460761DDE0C2200775E78 /* ParisWeather.xcdatamodel */;
+			path = ParisWeather.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = DCA61FC71DDE0B6E00D06C3A /* Project object */;
 }
