@@ -25,10 +25,7 @@ class MainViewController: UIViewController {
     }
     
     // MARK: - IBOutlets
-    @IBOutlet weak var temperatureLabel: UILabel!
-    @IBOutlet weak var dateLabel: UILabel!
-    @IBOutlet weak var weatherImageView: UIImageView!
-    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var tableView: UITableView!
     
     // MARK: - Controller variables
     var applicationManager: ApplicationManager? {
@@ -43,16 +40,16 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.collectionView.dataSource = self
-        self.collectionView.delegate = self
+        self.tableView.dataSource = self
+        self.tableView.delegate = self
         
-        registerCollectionViewCell()
+        registerTableViewCell()
     }
     
     // MARK: - Controller custom methods
-    fileprivate func registerCollectionViewCell() {
+    fileprivate func registerTableViewCell() {
         let weatherCellNib = UINib(nibName: CellIdentifier.weatherCell, bundle: Bundle.main)
-        self.collectionView.register(weatherCellNib, forCellWithReuseIdentifier: CellIdentifier.weatherCell)
+        self.tableView.register(weatherCellNib, forCellReuseIdentifier: CellIdentifier.weatherCell)
     }
     
     fileprivate func getWeather() {
@@ -74,25 +71,8 @@ class MainViewController: UIViewController {
                 weathersToSplit.removeFirst()
                 self.nextDaysWeather = weathersToSplit
                 
-                self.updateUI()
             }
         }
-    }
-    
-    fileprivate func updateUI() {
-        if let todayWeather = self.todayWeather {
-            self.temperatureLabel.text = "\(todayWeather.tempDay)˚C"
-            
-            if let date = todayWeather.date as? Date {
-                self.dateLabel.text = MainViewController.dateFormatter.string(from: date)
-            }
-            
-            if let iconName = todayWeather.icon {
-                self.weatherImageView.image = UIImage(named: iconName)
-            }
-        }
-        
-        self.collectionView.reloadData()
     }
     
     fileprivate func displayError(error: Error) {
@@ -105,31 +85,32 @@ class MainViewController: UIViewController {
     }
 }
 
-extension MainViewController: UICollectionViewDataSource {
-    // MARK: - UICollectionViewDataSource methods
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
+extension MainViewController: UITableViewDataSource {
+    // MARK: - UITableViewDataSource methods
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.nextDaysWeather.count
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        // Get WeatherCell 
+        let cell = self.tableView.dequeueReusableCell(withIdentifier: CellIdentifier.weatherCell, for: indexPath) as! WeatherCell
         
-        let cell = self.collectionView.dequeueReusableCell(withReuseIdentifier: CellIdentifier.weatherCell, for: indexPath) as! WeatherCell
+        // Get the current day 
+        let weatherDay = self.nextDaysWeather[indexPath.row]
         
-        let currentWeather = self.nextDaysWeather[indexPath.row]
-        
-        cell.configureCell(with: currentWeather)
+        // Pass the data to the cell
+        cell.configureCell(with: weatherDay)
         
         return cell
     }
 }
 
-extension MainViewController: UICollectionViewDelegate {
-    // MARK: - UICollectionViewDelegate methods
-    
+extension MainViewController: UITableViewDelegate {
+    // MARK: - UITableViewDelegate methods
     
 }
 

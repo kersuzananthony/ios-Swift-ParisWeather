@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WeatherCell: UICollectionViewCell {
+class WeatherCell: UITableViewCell {
 
     // MARK: Static 
     private static let dateFormatter: DateFormatter = {

@@ -7,12 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		77C2D9351B21F9765539B16D /* Pods_ParisWeather.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF6C8CC2DA753B624D197F4D /* Pods_ParisWeather.framework */; };
+		BF31FB93F4CC3E47B42BBB91 /* Pods_ParisWeather.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A700939AD4723E890EB558A8 /* Pods_ParisWeather.framework */; };
 		DCA460771DDE0C2200775E78 /* ParisWeather.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DCA460751DDE0C2200775E78 /* ParisWeather.xcdatamodeld */; };
 		DCA460861DDE0E5E00775E78 /* WeatherDay+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA460841DDE0E5E00775E78 /* WeatherDay+CoreDataClass.swift */; };
 		DCA460871DDE0E5E00775E78 /* WeatherDay+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA460851DDE0E5E00775E78 /* WeatherDay+CoreDataProperties.swift */; };
 		DCA4608C1DDE130200775E78 /* WeatherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA4608A1DDE130200775E78 /* WeatherCell.swift */; };
-		DCA4608D1DDE130200775E78 /* WeatherCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCA4608B1DDE130200775E78 /* WeatherCell.xib */; };
 		DCA460901DDE13EE00775E78 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA4608F1DDE13EE00775E78 /* Functions.swift */; };
 		DCA61FD31DDE0B6E00D06C3A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA61FD21DDE0B6E00D06C3A /* AppDelegate.swift */; };
 		DCA61FD51DDE0B6E00D06C3A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA61FD41DDE0B6E00D06C3A /* MainViewController.swift */; };
@@ -24,16 +23,17 @@
 		DCB6A7541DDE3D4C00A34717 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB6A7531DDE3D4C00A34717 /* CoreDataManager.swift */; };
 		DCCE896A1DDE19E4005686FA /* JSONWeatherDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCE89691DDE19E4005686FA /* JSONWeatherDay.swift */; };
 		DCCE896D1DDE253B005686FA /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCE896C1DDE253B005686FA /* APIClient.swift */; };
+		DCE511B71DE4D21C001E8956 /* WeatherCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCE511B51DE4D21C001E8956 /* WeatherCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		5476CC880D05FEBC61DBA0B0 /* Pods-ParisWeather.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ParisWeather.release.xcconfig"; path = "Pods/Target Support Files/Pods-ParisWeather/Pods-ParisWeather.release.xcconfig"; sourceTree = "<group>"; };
-		AF6C8CC2DA753B624D197F4D /* Pods_ParisWeather.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ParisWeather.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		01FB9793D08413EBCB50D10D /* Pods-ParisWeather.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ParisWeather.release.xcconfig"; path = "Pods/Target Support Files/Pods-ParisWeather/Pods-ParisWeather.release.xcconfig"; sourceTree = "<group>"; };
+		A700939AD4723E890EB558A8 /* Pods_ParisWeather.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ParisWeather.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC950CC7F78A51D04BCC6EDD /* Pods-ParisWeather.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ParisWeather.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ParisWeather/Pods-ParisWeather.debug.xcconfig"; sourceTree = "<group>"; };
 		DCA460761DDE0C2200775E78 /* ParisWeather.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ParisWeather.xcdatamodel; sourceTree = "<group>"; };
 		DCA460841DDE0E5E00775E78 /* WeatherDay+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "WeatherDay+CoreDataClass.swift"; sourceTree = "<group>"; };
 		DCA460851DDE0E5E00775E78 /* WeatherDay+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "WeatherDay+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		DCA4608A1DDE130200775E78 /* WeatherCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherCell.swift; sourceTree = "<group>"; };
-		DCA4608B1DDE130200775E78 /* WeatherCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WeatherCell.xib; sourceTree = "<group>"; };
 		DCA4608F1DDE13EE00775E78 /* Functions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
 		DCA61FCF1DDE0B6E00D06C3A /* ParisWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ParisWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCA61FD21DDE0B6E00D06C3A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -47,7 +47,7 @@
 		DCB6A7531DDE3D4C00A34717 /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		DCCE89691DDE19E4005686FA /* JSONWeatherDay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONWeatherDay.swift; sourceTree = "<group>"; };
 		DCCE896C1DDE253B005686FA /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
-		E17D1D47DF46EFF3C7D2BFFE /* Pods-ParisWeather.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ParisWeather.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ParisWeather/Pods-ParisWeather.debug.xcconfig"; sourceTree = "<group>"; };
+		DCE511B51DE4D21C001E8956 /* WeatherCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WeatherCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,26 +55,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				77C2D9351B21F9765539B16D /* Pods_ParisWeather.framework in Frameworks */,
+				BF31FB93F4CC3E47B42BBB91 /* Pods_ParisWeather.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		638DEB6F1D8A5483FE87E997 /* Frameworks */ = {
+		1AE72D3970EDB54364118365 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				AF6C8CC2DA753B624D197F4D /* Pods_ParisWeather.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		D1B44C251B2CC2395695D2B3 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				E17D1D47DF46EFF3C7D2BFFE /* Pods-ParisWeather.debug.xcconfig */,
-				5476CC880D05FEBC61DBA0B0 /* Pods-ParisWeather.release.xcconfig */,
+				DC950CC7F78A51D04BCC6EDD /* Pods-ParisWeather.debug.xcconfig */,
+				01FB9793D08413EBCB50D10D /* Pods-ParisWeather.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -95,7 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				DCA4608A1DDE130200775E78 /* WeatherCell.swift */,
-				DCA4608B1DDE130200775E78 /* WeatherCell.xib */,
+				DCE511B51DE4D21C001E8956 /* WeatherCell.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -120,8 +112,8 @@
 			children = (
 				DCA61FD11DDE0B6E00D06C3A /* ParisWeather */,
 				DCA61FD01DDE0B6E00D06C3A /* Products */,
-				D1B44C251B2CC2395695D2B3 /* Pods */,
-				638DEB6F1D8A5483FE87E997 /* Frameworks */,
+				1AE72D3970EDB54364118365 /* Pods */,
+				FA87085E4978215129CBCD30 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -177,6 +169,14 @@
 			name = Services;
 			sourceTree = "<group>";
 		};
+		FA87085E4978215129CBCD30 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A700939AD4723E890EB558A8 /* Pods_ParisWeather.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -184,12 +184,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DCA61FE11DDE0B6E00D06C3A /* Build configuration list for PBXNativeTarget "ParisWeather" */;
 			buildPhases = (
-				C28C2827300AD2F927B5A37C /* [CP] Check Pods Manifest.lock */,
+				DEC671D13154F74396025DF8 /* [CP] Check Pods Manifest.lock */,
 				DCA61FCB1DDE0B6E00D06C3A /* Sources */,
 				DCA61FCC1DDE0B6E00D06C3A /* Frameworks */,
 				DCA61FCD1DDE0B6E00D06C3A /* Resources */,
-				B10C3C13A93DBCB21BF61EDE /* [CP] Embed Pods Frameworks */,
-				236194900A648149CB8CA1AA /* [CP] Copy Pods Resources */,
+				68EA72F9C2083F4BB914CF4C /* [CP] Embed Pods Frameworks */,
+				75EEA6EA54F12A3CA7B8804C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -240,7 +240,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DCA4608D1DDE130200775E78 /* WeatherCell.xib in Resources */,
+				DCE511B71DE4D21C001E8956 /* WeatherCell.xib in Resources */,
 				DCA61FDD1DDE0B6E00D06C3A /* LaunchScreen.storyboard in Resources */,
 				DCA61FDA1DDE0B6E00D06C3A /* Assets.xcassets in Resources */,
 				DCA61FD81DDE0B6E00D06C3A /* Main.storyboard in Resources */,
@@ -250,22 +250,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		236194900A648149CB8CA1AA /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ParisWeather/Pods-ParisWeather-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B10C3C13A93DBCB21BF61EDE /* [CP] Embed Pods Frameworks */ = {
+		68EA72F9C2083F4BB914CF4C /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -280,7 +265,22 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ParisWeather/Pods-ParisWeather-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C28C2827300AD2F927B5A37C /* [CP] Check Pods Manifest.lock */ = {
+		75EEA6EA54F12A3CA7B8804C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ParisWeather/Pods-ParisWeather-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DEC671D13154F74396025DF8 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -357,6 +357,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -379,7 +380,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -408,6 +409,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -424,7 +426,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -436,8 +438,9 @@
 		};
 		DCA61FE21DDE0B6E00D06C3A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E17D1D47DF46EFF3C7D2BFFE /* Pods-ParisWeather.debug.xcconfig */;
+			baseConfigurationReference = DC950CC7F78A51D04BCC6EDD /* Pods-ParisWeather.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = M4YY2LX9P9;
 				INFOPLIST_FILE = ParisWeather/Info.plist;
@@ -451,8 +454,9 @@
 		};
 		DCA61FE31DDE0B6E00D06C3A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5476CC880D05FEBC61DBA0B0 /* Pods-ParisWeather.release.xcconfig */;
+			baseConfigurationReference = 01FB9793D08413EBCB50D10D /* Pods-ParisWeather.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = M4YY2LX9P9;
 				INFOPLIST_FILE = ParisWeather/Info.plist;

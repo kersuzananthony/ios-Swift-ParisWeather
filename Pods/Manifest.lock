@@ -1,23 +1,18 @@
 PODS:
   - Alamofire (4.1.0)
-  - Alamofire-Gloss (2.0.0):
-    - Alamofire-Gloss/Core (= 2.0.0)
-  - Alamofire-Gloss/Core (2.0.0):
-    - Alamofire (~> 4.0)
-    - Gloss (~> 1.0)
   - Gloss (1.1.0)
   - ReachabilitySwift (3)
 
 DEPENDENCIES:
-  - Alamofire-Gloss (~> 2.0)
+  - Alamofire
+  - Gloss
   - ReachabilitySwift (~> 3)
 
 SPEC CHECKSUMS:
   Alamofire: e266cf991b933498df791e645e0d8ac294492153
-  Alamofire-Gloss: dea192a13e23d323415e80e9b18d53915fd484bf
   Gloss: a8340c124ff69c5d1c12e06c252373f4a16d2958
   ReachabilitySwift: f5b9bb30a0777fac8f09ce8b067e32faeb29bb64
 
-PODFILE CHECKSUM: 7e3ed1c3c3a7550d6305944ddb4f4e02f994ad47
+PODFILE CHECKSUM: 921831108f432319d543009de875f899f0cd151c
 
 COCOAPODS: 1.1.1

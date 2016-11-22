@@ -38,14 +38,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         
-        guard let mainViewController = mainStoryboard.instantiateViewController(withIdentifier: "MainViewController") as? MainViewController else {
+        guard let navigationViewController = mainStoryboard.instantiateViewController(withIdentifier: "MainNavigationController") as? UINavigationController, let mainViewController = navigationViewController.viewControllers.first as? MainViewController  else {
             fatalError("Cannot access initial view controller")
         }
         
         mainViewController.applicationManager = applicationManager
         
         // Return the mainViewController to the closure
-        completion(mainViewController)
+        completion(navigationViewController)
     }
 }
 

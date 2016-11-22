@@ -9,7 +9,6 @@
 import Foundation
 import CoreData
 import Alamofire
-import Alamofire_Gloss
 
 class APIClient {
     
@@ -19,15 +18,7 @@ class APIClient {
     }()
     
     func getWeather(_ completion: @escaping (Error?, [WeatherDay]) -> ()) {
-        Alamofire.request(APIClient.WEATHER_URL).responseObject(JSONWeather.self) { (response) in
-            switch response.result {
-            case .success(let value):
-                // We got data from the API, we need to refresh data in coredata
-                completion(nil, self.refreshLocalWeatherData(weatherData: value))
-            case .failure(let error):
-                completion(error, [])
-            }
-        }
+        
     }
     
     fileprivate func refreshLocalWeatherData(weatherData: JSONWeather) -> [WeatherDay] {
