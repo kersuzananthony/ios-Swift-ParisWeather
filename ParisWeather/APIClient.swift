@@ -47,6 +47,8 @@ class APIClient {
             
             Alamofire.request(APIClient.WEATHER_URL, method: .get, parameters: nil, encoding: URLEncoding.default, headers: nil).responseJSON(queue: queue, options: JSONSerialization.ReadingOptions.allowFragments, completionHandler: { (response) in
                 
+                UIApplication.shared.isNetworkActivityIndicatorVisible = false
+                
                 switch response.result {
                 case .success:
                     // We can create new WeatherDay object
