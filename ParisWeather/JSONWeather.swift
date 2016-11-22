@@ -12,7 +12,7 @@ import Gloss
 
 struct JSONWeather: Decodable {
     
-    var weatherDay: [JSONWeatherDay]?
+    var weatherDay: [JSONWeatherInfo]?
     
     init?(json: JSON) {
         self.weatherDay = "list" <~~ json

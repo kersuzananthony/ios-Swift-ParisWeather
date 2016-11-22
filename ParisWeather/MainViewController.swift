@@ -24,17 +24,24 @@ class MainViewController: UIViewController {
         static let weatherCell = "WeatherCell"
     }
     
+    fileprivate struct Segue {
+        static let detail = "DetailVC"
+    }
+    
     // MARK: - IBOutlets
     @IBOutlet weak var tableView: UITableView!
     
     // MARK: - Controller variables
     var applicationManager: ApplicationManager? {
         didSet {
-            getWeather()
+            if isViewLoaded {
+                getWeather()
+            }
         }
     }
-    var todayWeather: WeatherDay?
-    var nextDaysWeather: [WeatherDay] = []
+
+    var nextWeatherInfos: [[WeatherInfo]] = []
+    var activityIndicatorView: UIActivityIndicatorView?
     
     // MARK: - Controller life cycle
     override func viewDidLoad() {
@@ -42,6 +49,10 @@ class MainViewController: UIViewController {
         
         self.tableView.dataSource = self
         self.tableView.delegate = self
+        
+        if applicationManager != nil {
+            getWeather()
+        }
         
         registerTableViewCell()
     }
@@ -53,25 +64,47 @@ class MainViewController: UIViewController {
     }
     
     fileprivate func getWeather() {
-        self.applicationManager?.apiClient.getWeather { (error: Error?, weatherDays: [WeatherDay]) in
-            DispatchQueue.main.async {
-                if error != nil {
-                    self.displayError(error: error!)
-                    return
+        startActivityIndicatorView()
+        
+        self.applicationManager?.apiClient.getWeather { (error: Error?, weatherInfos: [[WeatherInfo]]?) in
+            DispatchQueue.main.async { [weak self] in
+                if let strongSelf = self {
+                    strongSelf.stopActivityIndicatorView()
+                    
+                    if error != nil {
+                        strongSelf.displayError(error: error!)
+                        return
+                    }
+                    
+                    guard let weatherInfos = weatherInfos, weatherInfos.count > 0 else {
+                        return
+                    }
+                    
+                    strongSelf.nextWeatherInfos = weatherInfos
+                    strongSelf.tableView.reloadData()
+
                 }
-                
-                // Check if weatherDays length is greater than 1
-                if weatherDays.count < 1 {
-                    return
-                }
-                
-                var weathersToSplit = weatherDays // We make a copy of it in order to split the data
-                
-                self.todayWeather = weathersToSplit.first
-                weathersToSplit.removeFirst()
-                self.nextDaysWeather = weathersToSplit
-                
             }
+        }
+    }
+    
+    fileprivate func startActivityIndicatorView() {
+        if self.activityIndicatorView == nil {
+            self.activityIndicatorView = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
+            self.activityIndicatorView!.activityIndicatorViewStyle = .gray
+            let barButton = UIBarButtonItem(customView: self.activityIndicatorView!)
+            self.navigationItem.setRightBarButton(barButton, animated: true)
+        }
+        
+        self.activityIndicatorView!.startAnimating()
+    }
+    
+    fileprivate func stopActivityIndicatorView() {
+        if self.activityIndicatorView != nil {
+            self.activityIndicatorView!.stopAnimating()
+            
+            self.navigationItem.setRightBarButton(nil, animated: true)
+            self.activityIndicatorView = nil
         }
     }
     
@@ -83,6 +116,14 @@ class MainViewController: UIViewController {
         
         present(alertController, animated: true, completion: nil)
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == Segue.detail {
+            if let destinationVC = segue.destination as? DetailViewController, let weatherDay = sender as? [WeatherInfo] {
+                destinationVC.weatherDay = weatherDay
+            }
+        }
+    }
 }
 
 extension MainViewController: UITableViewDataSource {
@@ -92,18 +133,18 @@ extension MainViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.nextDaysWeather.count
+        return self.nextWeatherInfos.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // Get WeatherCell 
         let cell = self.tableView.dequeueReusableCell(withIdentifier: CellIdentifier.weatherCell, for: indexPath) as! WeatherCell
         
-        // Get the current day 
-        let weatherDay = self.nextDaysWeather[indexPath.row]
+        // Get the current day (which contains an array of weather info of the day) 
+        let weatherDayInfos = self.nextWeatherInfos[indexPath.row]
         
         // Pass the data to the cell
-        cell.configureCell(with: weatherDay)
+        cell.configureCell(with: weatherDayInfos)
         
         return cell
     }
@@ -111,6 +152,12 @@ extension MainViewController: UITableViewDataSource {
 
 extension MainViewController: UITableViewDelegate {
     // MARK: - UITableViewDelegate methods
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.tableView.deselectRow(at: indexPath, animated: false)
+        
+        let weatherDay: [WeatherInfo] = self.nextWeatherInfos[indexPath.row]
+        
+        performSegue(withIdentifier: Segue.detail, sender: weatherDay)
+    }
 }
 

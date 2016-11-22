@@ -1,5 +1,5 @@
 //
-//  JSONWeather.swift
+//  JSONWeatherInfo.swift
 //  ParisWeather
 //
 //  Created by Kersuzan on 17/11/2016.
@@ -32,7 +32,7 @@ enum WindDirection: String {
     case NNW = "North/North West"
 }
 
-struct JSONWeatherDay: Decodable {
+struct JSONWeatherInfo: Decodable {
     
     var error: WeatherError? // Since the init function cannot throw in order to conform Decodable protocol, we put this error variable to toggle error state
     var shortDescriptionWeather: String?
@@ -92,7 +92,7 @@ struct JSONWeatherDay: Decodable {
             return nil
         }
         
-        self.date = Date(timeIntervalSince1970: TimeInterval(intervalInMilliseconds / 1000))
+        self.date = Date(timeIntervalSince1970: TimeInterval(intervalInMilliseconds))
         
         // Wind
         guard let windSpeed: Double = "wind.speed" <~~ json else {
@@ -105,7 +105,7 @@ struct JSONWeatherDay: Decodable {
             self.error = WeatherError.InvalidData(item: "WindDirection")
             return nil
         }
-        self.windDirection = JSONWeatherDay.convertWindDegreeToWindDirection(degree: windDirectionInDegrees)
+        self.windDirection = JSONWeatherInfo.convertWindDegreeToWindDirection(degree: windDirectionInDegrees)
         
         // Pressure
         guard let pressure: Double = "main.pressure" <~~ json else {
