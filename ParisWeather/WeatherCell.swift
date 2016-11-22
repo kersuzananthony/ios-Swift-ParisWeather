@@ -30,7 +30,7 @@ class WeatherCell: UICollectionViewCell {
     }
     
     // MARK: - WeatherCell custom methods
-    func configureCell(with weather: Weather) {
+    func configureCell(with weather: WeatherDay) {
         if let date = weather.date as? Date {
             self.dateLabel.text = WeatherCell.dateFormatter.string(from: date)
         }
@@ -39,7 +39,7 @@ class WeatherCell: UICollectionViewCell {
             self.weatherImageView.image = UIImage(named: icon)
         }
         
-        self.tempMinLabel.text = "\(Int(weather.tempMin))"
-        self.tempMaxLabel.text = "\(Int(weather.tempMax))"
+        self.tempMinLabel.text = "\(Int(weather.tempMin))˚K"
+        self.tempMaxLabel.text = "\(Int(weather.tempMax))˚K"
     }
 }

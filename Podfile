@@ -7,6 +7,7 @@ target 'ParisWeather' do
 
   # Pods for ParisWeather
   pod 'Alamofire-Gloss', '~> 2.0'
+pod 'ReachabilitySwift', '~> 3'
 post_install do |installer|
     installer.pods_project.targets.each do |target|
         target.build_configurations.each do |config|

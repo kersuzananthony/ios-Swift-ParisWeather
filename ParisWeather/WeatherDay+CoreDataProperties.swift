@@ -1,5 +1,5 @@
 //
-//  Weather+CoreDataProperties.swift
+//  WeatherDay+CoreDataProperties.swift
 //  ParisWeather
 //
 //  Created by Kersuzan on 17/11/2016.
@@ -10,10 +10,10 @@ import Foundation
 import CoreData
 
 
-extension Weather {
+extension WeatherDay {
 
-    @nonobjc public class func fetchRequest() -> NSFetchRequest<Weather> {
-        return NSFetchRequest<Weather>(entityName: "Weather");
+    @nonobjc public class func fetchRequest() -> NSFetchRequest<WeatherDay> {
+        return NSFetchRequest<WeatherDay>(entityName: "WeatherDay");
     }
 
     @NSManaged public var shortDescriptionWeather: String?
