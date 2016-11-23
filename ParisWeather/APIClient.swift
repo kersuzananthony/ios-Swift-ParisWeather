@@ -38,6 +38,16 @@ class APIClient {
         return "http://api.openweathermap.org/data/2.5/forecast?q=Paris&mode=json&appid=\(API_KEY)"
     }()
     
+    /**
+     Main method for getting weather data.
+     If the user has access to the network, we send a HTTP Request to the API, then we persist data into
+     the local database.
+     If the user has no access to the network, we read the data in the local database, then call the 
+     completion handler
+     
+     @param completion Callback to call when weather data can be returned to the caller
+     @return Void.
+     */
     func getWeather(_ completion: @escaping (Error?, [[WeatherInfo]]?) -> ()) {
         let queue = DispatchQueue(label: "com.kersuzan.parisweather.response-queue", qos: .utility, attributes: [.concurrent])
         
@@ -90,7 +100,7 @@ class APIClient {
                 let groupedWeatherInfos = groupWeatherInfoByDay(weatherInfos: weatherInfos)
                 
                 completion(nil, groupedWeatherInfos)
-
+                
             } catch let error as APIClientError {
                 // We give the error to the completion block
                 completion(error, nil)
@@ -100,8 +110,15 @@ class APIClient {
         }
     }
     
+    /**
+     Methods called when the user has no access to the network. 
+     It only returns weather info which were persisted into the local database.
+     
+     @return [WeatherInfo].
+     */
     fileprivate func getLocalWeatherData() throws -> [WeatherInfo] {
         guard let coreDataManager = ApplicationManager.getInstance.coreDataManager else {
+            // CoreDataManager is not set.
             throw APIClientError.localDataCorrupted
         }
         
@@ -116,6 +133,14 @@ class APIClient {
         }
     }
     
+    /**
+     Methods called after getting data from the API.
+     It makes call to two others methods: deletePreviousWeatherData and insertNewWeatherData
+     
+     @param weatherData The json representation of the weather data we got from the api
+     
+     @return [WeatherInfo].
+     */
     fileprivate func refreshLocalWeatherData(weatherData: JSONWeather) throws -> [WeatherInfo] {
         guard let coreDataManager = ApplicationManager.getInstance.coreDataManager else {
             throw APIClientError.localDataCorrupted
@@ -125,6 +150,12 @@ class APIClient {
         return insertNewWeatherdata(coreDataManager: coreDataManager, weatherData: weatherData)
     }
     
+    /**
+     Methods that delete all previous data stored into the database.
+     
+     @param coreDataManager
+     @return Void.
+     */
     fileprivate func deletePreviousWeatherData(coreDataManager: CoreDataManager) throws {
         let request = NSFetchRequest<WeatherInfo>(entityName: "WeatherInfo")
         
@@ -141,9 +172,16 @@ class APIClient {
         }
     }
     
+    /**
+     Methods that insert new weather info into the database then return it.
+     
+     @param coreDataManager 
+     @param weatherData Json representation of the weather data we got from the API
+     @return Void.
+     */
     fileprivate func insertNewWeatherdata(coreDataManager: CoreDataManager, weatherData: JSONWeather) -> [WeatherInfo] {
         var weatherInfos: [WeatherInfo] = []
-
+        
         if let jsonWeatherInfos = weatherData.weatherDay {
             for jsonWeatherInfo in jsonWeatherInfos {
                 weatherInfos.append(WeatherInfo(context: coreDataManager.mainThreadManagedObjectContext, jsonWeatherInfo: jsonWeatherInfo))
@@ -155,6 +193,12 @@ class APIClient {
         return weatherInfos
     }
     
+    /**
+     This methods aims at grouping weather info by day (because we may have 8 weather infos per day)
+     
+     @param weatherInfos Array of weatherInfo to group by day
+     @return [[WeatherInfo]] Array of weather info array (an array groups weather info by day).
+     */
     fileprivate func groupWeatherInfoByDay(weatherInfos: [WeatherInfo]) -> [[WeatherInfo]] {
         // Final array to return
         var arrayToReturn: [[WeatherInfo]] = []
@@ -164,8 +208,6 @@ class APIClient {
         var currentDay: Int = 0
         
         let calendar = Calendar.current
-
-        
         
         for info in weatherInfos {
             guard let infoDate = info.date else {
@@ -189,8 +231,6 @@ class APIClient {
                 
                 // We can empty weatherInfoByDate
                 weatherInfoByDate = []
-                
-                
             }
             
             // We append the new info into the subarray

@@ -44,7 +44,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         mainViewController.applicationManager = applicationManager
         
-        // Return the mainViewController to the closure
+        // Return the navigationViewController to the closure
         completion(navigationViewController)
     }
 }

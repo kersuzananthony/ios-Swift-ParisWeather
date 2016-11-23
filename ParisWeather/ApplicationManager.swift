@@ -84,6 +84,7 @@ class ApplicationManager {
             return
         }
         
+        // Observe when the network changes
         NotificationCenter.default.addObserver(self, selector: #selector(reachabilityChanged), name: ReachabilityChangedNotification, object: self.reachability)
     }
     

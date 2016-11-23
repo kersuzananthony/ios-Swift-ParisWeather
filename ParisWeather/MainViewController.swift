@@ -89,6 +89,7 @@ class MainViewController: UIViewController {
     }
     
     fileprivate func startActivityIndicatorView() {
+        // Adds activityIndicatorView into the navigation bar
         if self.activityIndicatorView == nil {
             self.activityIndicatorView = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
             self.activityIndicatorView!.activityIndicatorViewStyle = .gray
@@ -100,6 +101,7 @@ class MainViewController: UIViewController {
     }
     
     fileprivate func stopActivityIndicatorView() {
+        // Stop and remove activityIndicatorView from the navigation bar
         if self.activityIndicatorView != nil {
             self.activityIndicatorView!.stopAnimating()
             
