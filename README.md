@@ -1,2 +1,2 @@
 # ios-Swift-ParisWeather
-A single weather app for paris
+A simple weather app for paris
